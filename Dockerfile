@@ -44,26 +44,8 @@ COPY bin/* /usr/local/bin/
 
 WORKDIR /var/www/html
 
-
-
-# Run setup script
-RUN php /var/www/html/bin/magento setup:install --base-url=http://il0a-cms-docker1/ \
---db-host=54.146.189.180 --db-name=magento --db-user=root --db-password=Gigya123 \
---admin-firstname=Magento --admin-lastname=User --admin-email=dor.av@gigya-inc.com --backend-frontname=admin \
---admin-user=admin --admin-password=Gigya123 --language=en_US \
---currency=USD --timezone=America/Chicago --cleanup-database \
---sales-order-increment-prefix="ORD$" --session-save=db --use-rewrites=1
-
-#Get permissions
-RUN chmod -Rf 777 /var/www/html
-
-#set developer mode
-RUN php /var/www/html/bin/magento deploy:mode:set developer
-
-COPY ./composer.json /var/www/html/
-COPY ./key.txt /var/www/html/
-
-#Get permissions
-RUN chmod -Rf 777 /var/www/html
-
 CMD ["/usr/local/bin/start"]
+
+
+
+
