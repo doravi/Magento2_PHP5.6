@@ -1,5 +1,5 @@
 FROM php:5.6
-RUN a2enmod rewrite
+
 
 ENV MAGENTO_VERSION 2.0.9
 
