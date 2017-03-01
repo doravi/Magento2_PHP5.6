@@ -22,5 +22,3 @@ RUN a2enmod rewrite
 RUN sed -i -e 's/\/var\/www\/html/\/var\/www\/htdocs/' /etc/apache2/apache2.conf
 
 WORKDIR /var/www/htdocs
-
-COPY ./bin/set-base-url /usr/local/bin/set-base-url
