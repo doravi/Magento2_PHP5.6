@@ -44,5 +44,3 @@ ENV APP_MAGE_MODE default
 
 WORKDIR /var/www/html
 
-
-CMD ["/usr/local/bin/start"]
